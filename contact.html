@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>KidKinder - Kindergarten Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free HTML Templates" name="keywords" />
+    <meta content="Free HTML Templates" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      /* ======================================
+Responsive Image gallery Style rules
+======================================*/
+      #myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: red; /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+        font-size: 18px; /* Increase font size */
+      }
+
+      #myBtn:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .container {
+        min-width: 100%;
+        padding: 40px 5%;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .heading-text {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .heading-text span {
+        font-weight: 100;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* Responsive image gallery rules begin*/
+      #readed {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #listed {
+        display: inline-block;
+      }
+
+      .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .image-gallery > li {
+        align-items: center;
+        flex-basis: 350px;
+        margin: 20px;
+        /*width: 350px;*/
+        position: relative;
+        cursor: pointer;
+      }
+
+      .image-gallery::after {
+        content: "";
+        flex-basis: 350px;
+      }
+
+      .image-gallery li img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        border-radius: 5px;
+      }
+
+      iframe {
+        margin: auto;
+        width: 50%;
+        border: 10px solid rgb(12, 132, 230);
+        border-radius: 5%;
+      }
+
+      .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(57, 57, 57, 0.502);
+        top: 0;
+        left: 0;
+        transform: scale(0);
+        transition: all 0.2s 0.1s ease-in-out;
+        color: #fff;
+        border-radius: 5px;
+        /* center overlay text */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* hover */
+      .image-gallery li:hover .overlay {
+        transform: scale(1);
+      }
+
+      #pagee {
+        width: 100%;
+        height: 1000px;
+      }
+      .booktitle {
+        text-align: center;
+        font-size: 70px;
+        font-weight: 600;
+        color: #fdfdfe;
+        text-shadow: 0px 0px 5px #2b74fa, 0px 0px 10px #557ff1,
+          0px 0px 10px #26b3eb, 0px 0px 20px #5ae1f3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-light position-relative shadow">
+      <nav
+        class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5"
+      >
+        <a
+          href=""
+          class="navbar-brand font-weight-bold text-secondary"
+          style="font-size: 50px"
+        >
+          <i class="flaticon-043-teddy-bear"></i>
+          <span class="text-primary">KidKinder</span>
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarCollapse"
+        >
+          <div class="navbar-nav font-weight-bold mx-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+            <a href="class.html" class="nav-item nav-link">Classes</a>
+            <a href="team.html" class="nav-item nav-link">Teachers</a>
+            <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Pages</a
+              >
+              <div class="dropdown-menu rounded-0 m-0">
+                <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                <a href="single.html" class="dropdown-item">Blog Detail</a>
+              </div>
+            </div>
+            <a href="contact.html" class="nav-item nav-link active">Contact</a>
+          </div>
+          <a href="" class="btn btn-primary px-4">Join Class</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+    <!-- hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
+
+    <div class="container" id="listed">
+      <h2 class="heading-text">Short stories and fables</h2>
+      <ul class="image-gallery">
+        <li>
+          <a href="#book2" onclick="display('book2')">
+            <img src="https://source.unsplash.com/e6FMMambeO4/640x416" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#book1" onclick="display('book1')">
+            <img src="https://source.unsplash.com/VWcPlbHglYc/640x416" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#book3" onclick="display('book3')">
+            <img src="https://source.unsplash.com/klCiPmzUw0Y/640x416" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#book2" onclick="display('book2')">
+            <img src="https://source.unsplash.com/e6FMMambeO4/640x416" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#book2" onclick="display('book2')">
+            <img src="https://source.unsplash.com/e6FMMambeO4/640x416" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#book2" onclick="display('book2')">
+            <img src="https://source.unsplash.com/e6FMMambeO4/640x416" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#book2" onclick="display('book2')">
+            <img src="https://source.unsplash.com/e6FMMambeO4/640x416" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#book2" onclick="display('book2')">
+            <img src="https://source.unsplash.com/e6FMMambeO4/640x416" alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="#book2" onclick="display('book2')">
+            <img src="https://source.unsplash.com/e6FMMambeO4/640x416" alt="" />
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <iframe
+      style="width: 900px; height: 600px; display: block"
+      class="responsive-iframe"
+      id="book1"
+      src="https://online.fliphtml5.com/imxzk/ktzo/"
+      seamless="seamless"
+      scrolling="no"
+      frameborder="0"
+      allowtransparency="true"
+      allowfullscreen="true"
+    ></iframe>
+    <div></div>
+    <div id="book2" style="align-items: center">
+      <div><p class="booktitle">This is a book</p></div>
+      <div style="display: flex; border-radius: 5%; border: #555">
+        <iframe
+          style="width: 750px; height: 600px; display: inline"
+          src="https://online.fliphtml5.com/imxzk/rwkm/"
+          seamless="seamless"
+          scrolling="no"
+          frameborder="0"
+          allowtransparency="true"
+          allowfullscreen="true"
+        ></iframe>
+
+        <iframe
+          style="width: 750px; height: 600px; display: inline"
+          src="https://www.youtube.com/embed/BELlZKpi1Zs"
+          title="Phonics Song 2"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div></div>
+    <iframe
+      style="width: 900px; height: 600px; display: block"
+      id="book3"
+      src="https://online.fliphtml5.com/imxzk/rwkm/"
+      seamless="seamless"
+      scrolling="no"
+      frameborder="0"
+      allowtransparency="true"
+      allowfullscreen="true"
+    ></iframe>
+    <div></div>
+
+    <script>
+      function arrayRemove(arr, value) {
+        return arr.filter(function (ele) {
+          return ele != value;
+        });
+      }
+      let cc = ["book1", "book2", "book3"];
+
+      function display(id) {
+        var e = document.getElementById(id);
+        if (e.style.display === "none") {
+          e.style.display = "block";
+          e.style.zIndex = "10000";
+        } else {
+          e.style.display = "none";
+        }
+        var result = arrayRemove(cc, id);
+        for (let i = 0; i < result.length; i++) {
+          document.getElementById(result[i]).style.display = "none";
+        }
+      }
+      mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+    </script>
+    <!-- hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5"
+    >
+      <div class="row pt-5">
+        <div class="col-lg-3 col-md-6 mb-5">
+          <a
+            href=""
+            class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0"
+            style="font-size: 40px; line-height: 40px"
+          >
+            <i class="flaticon-043-teddy-bear"></i>
+            <span class="text-white">KidKinder</span>
+          </a>
+          <p>
+            Labore dolor amet ipsum ea, erat sit ipsum duo eos. Volup amet ea
+            dolor et magna dolor, elitr rebum duo est sed diam elitr. Stet elitr
+            stet diam duo eos rebum ipsum diam ipsum elitr.
+          </p>
+          <div class="d-flex justify-content-start mt-4">
+            <a
+              class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+              style="width: 38px; height: 38px"
+              href="#"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+              style="width: 38px; height: 38px"
+              href="#"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+              style="width: 38px; height: 38px"
+              href="#"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+              style="width: 38px; height: 38px"
+              href="#"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+          <h3 class="text-primary mb-4">Get In Touch</h3>
+          <div class="d-flex">
+            <h4 class="fa fa-map-marker-alt text-primary"></h4>
+            <div class="pl-3">
+              <h5 class="text-white">Address</h5>
+              <p>123 Street, New York, USA</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <h4 class="fa fa-envelope text-primary"></h4>
+            <div class="pl-3">
+              <h5 class="text-white">Email</h5>
+              <p>info@example.com</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <h4 class="fa fa-phone-alt text-primary"></h4>
+            <div class="pl-3">
+              <h5 class="text-white">Phone</h5>
+              <p>+012 345 67890</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+          <h3 class="text-primary mb-4">Quick Links</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-white mb-2" href="#"
+              ><i class="fa fa-angle-right mr-2"></i>Home</a
+            >
+            <a class="text-white mb-2" href="#"
+              ><i class="fa fa-angle-right mr-2"></i>About Us</a
+            >
+            <a class="text-white mb-2" href="#"
+              ><i class="fa fa-angle-right mr-2"></i>Our Classes</a
+            >
+            <a class="text-white mb-2" href="#"
+              ><i class="fa fa-angle-right mr-2"></i>Our Teachers</a
+            >
+            <a class="text-white mb-2" href="#"
+              ><i class="fa fa-angle-right mr-2"></i>Our Blog</a
+            >
+            <a class="text-white" href="#"
+              ><i class="fa fa-angle-right mr-2"></i>Contact Us</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+          <h3 class="text-primary mb-4">Newsletter</h3>
+          <form action="">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control border-0 py-4"
+                placeholder="Your Name"
+                required="required"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control border-0 py-4"
+                placeholder="Your Email"
+                required="required"
+              />
+            </div>
+            <div>
+              <button
+                class="btn btn-primary btn-block border-0 py-3"
+                type="submit"
+              >
+                Submit Now
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div
+        class="container-fluid pt-5"
+        style="border-top: 1px solid rgba(23, 162, 184, 0.2)"
+      >
+        <p class="m-0 text-center text-white">
+          &copy;
+          <a class="text-primary font-weight-bold" href="#">Your Site Name</a>.
+          All Rights Reserved.
+
+          <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+          Designed by
+          <a class="text-primary font-weight-bold" href="https://htmlcodex.com"
+            >HTML Codex</a
+          >
+        </p>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary p-3 back-to-top"
+      ><i class="fa fa-angle-double-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab |www.youtube.comCodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Video Player in JavaScript | CodingLab </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylea.css">
+    <!-- Boxicons Link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+   </head>
+<body>
+<section>
+    <div class="container">
+      <div class="main-video">
+          <iframe width="1019" height="573" src="https://www.youtube.com/embed/3-2Pj5hxwrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <i class='bx bx-x close'></i>
+      </div>
+	<div class="videos">
+        <iframe width="1019" height="573" src="https://www.youtube.com/embed/tjyDOHzKN0w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+	<i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <iframe width="1019" height="573" src="https://www.youtube.com/embed/3-2Pj5hxwrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <iframe width="1019" height="573" src="https://www.youtube.com/embed/tjyDOHzKN0w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <iframe width="1019" height="573" src="https://www.youtube.com/embed/tjyDOHzKN0w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <embed src="https://online.fliphtml5.com/imxzk/ktzo/"  >
+	<i class='bx bx-play-circle'></i>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const section = document.querySelector("section"),
+    mainVideo = document.querySelector(".main-video iframe"),
+     videos = document.querySelectorAll(".videos"),
+     close = document.querySelector(".close");
+
+     for (var i = 0; i < videos.length; i++) {
+       videos[i].addEventListener("click", (e)=>{
+         const target = e.target;
+         section.classList.add("active");
+         target.classList.add("active");
+         let src = document.querySelector(".videos.active iframe").src;
+         mainVideo.src = src;
+
+         close.addEventListener("click", ()=>{
+           section.classList.remove("active");
+           target.classList.remove("active");
+           mainVideo.src = "";
+         });
+       });
+     };
+  </script>
+
+</body>
+</html>

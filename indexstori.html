@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link rel="stylesheet" href="stylestori.css" />
+  </head>
+  <body>
+
+
+
+<div class="container" id="listed">
+      <h2 class="heading-text">Responsive <span>image gallery</span></h2>
+      <ul class="image-gallery">
+        <li>
+<a href="#book2"   onclick=display("book2") >
+         <img src="https://source.unsplash.com/e6FMMambeO4/640x416" alt="" />
+</a>
+ 
+        </li>
+        <li>
+
+<a  href="#book1" onclick=display("book1") >
+          <img src="https://source.unsplash.com/VWcPlbHglYc/640x416" alt="" />
+</a>
+
+          
+        </li>
+        <li>
+<a href="#book3"  onclick=display("book3") >
+          <img src="https://source.unsplash.com/klCiPmzUw0Y/640x416" alt="" />
+          
+</a>
+         
+        </li>
+      </ul>
+    </div>
+
+
+<iframe style="width:900px;height:600px;display:block" class="responsive-iframe" id="book1" src="https://online.fliphtml5.com/imxzk/ktzo/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+<div></div>
+<div id="book2">
+<p>This is a topic</p>
+<iframe style="width:900px;height:600px;display:block" src="https://online.fliphtml5.com/imxzk/rwkm/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+<iframe style="width:900px;height:600px;display:block" src="https://www.youtube.com/embed/BELlZKpi1Zs" title="Phonics Song 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div></div>
+<iframe style="width:900px;height:600px;display:block" id="book3" src="https://online.fliphtml5.com/imxzk/rwkm/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+<div></div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+function arrayRemove(arr, value) { 
+    
+        return arr.filter(function(ele){ 
+            return ele != value; 
+        });
+    }
+let cc=["book1","book2","book3"]
+
+
+function display(id) {
+    var e = document.getElementById(id);
+    if (e.style.display === "none") {
+        e.style.display = "block";
+        e.style.zIndex = "10000";
+    } else{
+e.style.display = "none";
+}
+var result = arrayRemove(cc, id);
+for (let i = 0; i < result.length; i++) {
+  document.getElementById(result[i]).style.display = "none";
+}
+}
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+  </body>
+</html>
